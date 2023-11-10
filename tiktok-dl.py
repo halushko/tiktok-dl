@@ -1,7 +1,9 @@
 import sys
 import re
-from urllib.request import Request, urlopen
 import urllib3
+import argparse
+
+from urllib.request import Request, urlopen
 
 DEBUG = True
 VERBOSE = False
@@ -45,8 +47,6 @@ def video_parse(args, r1):
 
 
 def mainline():
-    import argparse
-
     parser = argparse.ArgumentParser()
     parser.add_argument("uri", help="uri to load")
     parser.add_argument("-v", "--verbose", help="verbose", action="store_true")

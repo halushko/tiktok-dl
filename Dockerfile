@@ -4,7 +4,7 @@ WORKDIR /app
 COPY tiktok-dl.py .
 RUN mkdir /app/files
 
-RUN pip install sys re urllib3 argparse urllib.request
+RUN pip install urllib3 argparse
 
 ENTRYPOINT tail -f /dev/null
 #CMD ["python", "main.py"]

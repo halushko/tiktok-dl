@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 WORKDIR /app
-COPY main.py .
+COPY tiktok-dl.py .
 RUN mkdir /app/files
 
 RUN pip install sys re urllib3 argparse urllib.request

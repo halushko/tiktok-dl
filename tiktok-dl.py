@@ -57,25 +57,22 @@ def mainline():
 
     print(args)
 
-    if VERSION == 2:
-        pass
-    else:
-        r1 = download_data(args.uri)
+    r1 = download_data(args.uri)
 
-        if args.debug and args.verbose:
-            print(r1.data)
+    if args.debug and args.verbose:
+        print(r1.data)
 
-        if args.debug:
-            print("saving debug output to disk...")
-            with open("out.html", "wb") as outf:
-                outf.write(r1.data)
+    if args.debug:
+        print("saving debug output to disk...")
+        with open("out.html", "wb") as outf:
+            outf.write(r1.data)
 
-        links = video_parse(args, r1)
+    links = video_parse(args, r1)
 
-        r2 = download_data(links[0])
+    r2 = download_data(links[0])
 
-        with open(args.output, "wb") as outf:
-            outf.write(r2.data)
+    with open(args.output, "wb") as outf:
+        outf.write(r2.data)
 
 
 if __name__ == "__main__":
